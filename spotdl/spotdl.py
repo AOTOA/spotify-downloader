@@ -57,7 +57,7 @@ def match_args():
         )
 
 
-def main():
+async def main():
     const.args = handle.get_arguments()
 
     internals.filter_path(const.args.folder)
