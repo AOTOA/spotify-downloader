@@ -7,6 +7,11 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![Gitter Chat](https://badges.gitter.im/ritiek/spotify-downloader/Lobby.svg)](https://gitter.im/spotify-downloader/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+## Supporting multithreaded downloads now! 
+## Original Repo
+this is the original repo
+https://github.com/ritiek/spotify-downloader/
+
 - Downloads songs from YouTube in an MP3 format by using Spotify's HTTP link.
 - Can also download a song by entering its artist and song name (in case if you don't have the Spotify's HTTP link for some song).
 - Automatically applies metadata to the downloaded song which includes:
@@ -29,9 +34,11 @@ If you still need to use Python 2 - check out the (outdated)
 
 spotify-downloader works with all major distributions and even on low-powered devices such as a Raspberry Pi.
 
-spotify-downloader can be installed via pip with:
+spotify-downloader can be installed with:
 ```console
-$ pip3 install spotdl
+$ git clone https://github.com/AOTOA/spotify-downloader.git
+$ cd spotify-downloader
+$ python3 setup.py
 ```
 
 but be sure to check out the [Installation](https://github.com/ritiek/spotify-downloader/wiki/Installation) wiki
