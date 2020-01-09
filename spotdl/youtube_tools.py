@@ -10,6 +10,9 @@ from spotdl import spotify_tools
 from spotdl import internals
 from spotdl import const
 
+from pySmartDL import SmartDL
+import multithread
+
 # Fix download speed throttle on short duration tracks
 # Read more on mps-youtube/pafy#199
 pafy.g.opener.addheaders.append(("Range", "bytes=0-"))
@@ -172,6 +175,8 @@ def download_song(file_name, content):
     _, extension = os.path.splitext(file_name)
     if extension in (".webm", ".m4a"):
         link = content.getbestaudio(preftype=extension[1:])
+        print('lonk')
+        print(type(link))
     else:
         log.debug("No audio streams available for {} type".format(extension))
         return False
@@ -180,7 +185,9 @@ def download_song(file_name, content):
         log.debug("Downloading from URL: " + link.url)
         filepath = os.path.join(const.args.folder, file_name)
         log.debug("Saving to: " + filepath)
-        link.download(filepath=filepath)
+        # link.download(filepath=filepath)
+        downloader = multithread.Downloader(link.url, filepath, 8)
+        downloader.start()
         return True
     else:
         log.debug("No audio streams available")
