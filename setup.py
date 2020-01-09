@@ -26,7 +26,8 @@ setup(
         "PyYAML >= 3.13",
         "appdirs >= 1.4.3",
         "pySmartDL >= 1.3.3",
-        "multithread >= 1.0.1"
+        "multithread >= 1.0.1",
+        "tqdm >= 4.41.1"
     ],
     description="Download songs from YouTube using Spotify song URLs or playlists with albumart and meta-tags.",
     long_description=long_description,
