@@ -12,6 +12,7 @@ This repo is forked from https://github.com/ritiek/spotify-downloader/
 
 I Only added a multithreaded download supprt.
 
+## About the Repo
 
 - Downloads songs from YouTube in an MP3 format by using Spotify's HTTP link.
 - Can also download a song by entering its artist and song name (in case if you don't have the Spotify's HTTP link for some song).
