@@ -57,7 +57,7 @@ def match_args():
         )
 
 
-async def main():
+def main():
     const.args = handle.get_arguments()
 
     internals.filter_path(const.args.folder)
@@ -76,5 +76,10 @@ async def main():
         sys.exit(3)
 
 
+
+def run_main():
+    main()
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    run_main()

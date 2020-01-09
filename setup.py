@@ -61,5 +61,5 @@ setup(
         "Topic :: Multimedia :: Sound/Audio",
         "Topic :: Utilities",
     ],
-    entry_points={"console_scripts": ["spotdl = spotdl.spotdl:main"]},
+    entry_points={"console_scripts": ["spotdl = spotdl.spotdl:run_main"]},
 )

@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib
 import pafy
+import asyncio
 
 from slugify import slugify
 from logzero import logger as log
@@ -175,8 +176,6 @@ def download_song(file_name, content):
     _, extension = os.path.splitext(file_name)
     if extension in (".webm", ".m4a"):
         link = content.getbestaudio(preftype=extension[1:])
-        print('lonk')
-        print(type(link))
     else:
         log.debug("No audio streams available for {} type".format(extension))
         return False
@@ -187,7 +186,11 @@ def download_song(file_name, content):
         log.debug("Saving to: " + filepath)
         # link.download(filepath=filepath)
         downloader = multithread.Downloader(link.url, filepath, 8)
-        downloader.start()
+
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(asyncio.wait([asyncio.ensure_future(downloader.asyncstart())]))
+        loop.close()
+        
         return True
     else:
         log.debug("No audio streams available")
