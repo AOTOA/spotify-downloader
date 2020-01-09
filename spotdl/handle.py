@@ -15,6 +15,7 @@ _LOG_LEVELS_STR = ["INFO", "WARNING", "ERROR", "DEBUG"]
 
 default_conf = {
     "spotify-downloader": {
+        "safe-name": False,
         "no-remove-original": False,
         "manual": False,
         "no-metadata": False,
@@ -296,6 +297,13 @@ def get_arguments(raw_args=None, to_group=True, to_merge=True):
         "--version",
         action="version",
         version="%(prog)s {}".format(spotdl.__version__),
+    )
+    parser.add_argument(
+        "-sn",
+        "--safe-name",
+        default=config["safe-name"],
+        help="use a safe name for spotify",
+        action="store_true",
     )
 
     parsed = parser.parse_args(raw_args)

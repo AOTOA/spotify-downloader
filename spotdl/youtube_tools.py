@@ -193,7 +193,6 @@ def download_song(file_name, content):
         
         loop = asyncio.get_event_loop()
         loop.run_until_complete(asyncio.wait([asyncio.ensure_future(run_download(link.url, filepath))]))
-        loop.close()
 
         return True
     else:

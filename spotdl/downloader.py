@@ -111,6 +111,8 @@ class Downloader:
 
         # generate file name of the song to download
         songname = self.refine_songname(self.content.title)
+        if const.args.safe_name:
+            songname = self.raw_song.replace(':', '_')
 
         if const.args.dry_run:
             return
