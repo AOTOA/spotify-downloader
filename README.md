@@ -10,7 +10,7 @@
 ## Supporting multithreaded downloads now! 
 This repo is forked from https://github.com/ritiek/spotify-downloader/
 
-I Only added a multithreaded download supprt.
+I only added a multithreaded download supprt.
 
 ## About
 
