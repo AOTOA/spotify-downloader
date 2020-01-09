@@ -171,6 +171,11 @@ def generate_m3u(track_file):
     return videos
 
 
+async def run_download(url, file):
+    downloader = multithread.Downloader(url, file, 8)
+    await downloader.asyncstart()
+
+
 def download_song(file_name, content):
     """ Download the audio file from YouTube. """
     _, extension = os.path.splitext(file_name)
@@ -185,12 +190,11 @@ def download_song(file_name, content):
         filepath = os.path.join(const.args.folder, file_name)
         log.debug("Saving to: " + filepath)
         # link.download(filepath=filepath)
-        downloader = multithread.Downloader(link.url, filepath, 8)
-
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(asyncio.wait([asyncio.ensure_future(downloader.asyncstart())]))
-        loop.close()
         
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(asyncio.wait([asyncio.ensure_future(run_download(link.url, filepath))]))
+        loop.close()
+
         return True
     else:
         log.debug("No audio streams available")
