@@ -4,6 +4,7 @@ import sys
 import platform
 import pprint
 import logzero
+import asyncio
 from logzero import logger as log
 
 from spotdl import __version__
@@ -76,4 +77,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
