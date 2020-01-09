@@ -8,9 +8,9 @@
 [![Gitter Chat](https://badges.gitter.im/ritiek/spotify-downloader/Lobby.svg)](https://gitter.im/spotify-downloader/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Supporting multithreaded downloads now! 
-## Original Repo
-this is the original repo
-https://github.com/ritiek/spotify-downloader/
+This repo is forked from https://github.com/ritiek/spotify-downloader/
+I Only added a multithreaded download supprt.
+
 
 - Downloads songs from YouTube in an MP3 format by using Spotify's HTTP link.
 - Can also download a song by entering its artist and song name (in case if you don't have the Spotify's HTTP link for some song).
